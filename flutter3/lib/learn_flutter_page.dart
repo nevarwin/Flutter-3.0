@@ -12,8 +12,9 @@ class _LearFlutterPageState extends State<LearFlutterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: ElevatedButton(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        leading: IconButton(
           onPressed: () {
             Navigator.of(context).pop(
               MaterialPageRoute(
@@ -23,8 +24,9 @@ class _LearFlutterPageState extends State<LearFlutterPage> {
               ),
             );
           },
-          child: const Text('Back'),
+          icon: const Icon(Icons.arrow_back_ios_new),
         ),
+        title: const Text('Learn Flutter'),
       ),
     );
   }
