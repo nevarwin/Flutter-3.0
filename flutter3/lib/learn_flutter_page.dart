@@ -10,6 +10,7 @@ class LearFlutterPage extends StatefulWidget {
 
 class _LearFlutterPageState extends State<LearFlutterPage> {
   bool isSwitch = false;
+  bool? isCheckbox = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,77 +30,88 @@ class _LearFlutterPageState extends State<LearFlutterPage> {
         ),
         title: const Text('Learn Flutter'),
       ),
-      body: Column(
-        children: [
-          Image.asset(
-            'images/cavite logo.png',
-            height: 300,
-            width: 300,
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          const Divider(
-            color: Colors.deepPurpleAccent,
-          ),
-          Container(
-            padding: const EdgeInsets.all(10),
-            margin: const EdgeInsets.all(10),
-            color: Colors.blueGrey,
-            child: const Center(
-              child: Text(
-                'This is a Text Widget',
-                style: TextStyle(color: Colors.white),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Image.asset(
+              'images/cavite logo.png',
+              height: 300,
+              width: 300,
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const Divider(
+              color: Colors.deepPurpleAccent,
+            ),
+            Container(
+              padding: const EdgeInsets.all(10),
+              margin: const EdgeInsets.all(10),
+              color: Colors.blueGrey,
+              child: const Center(
+                child: Text(
+                  'This is a Text Widget',
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
             ),
-          ),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: isSwitch ? Colors.amber : Colors.grey,
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: isSwitch ? Colors.amber : Colors.grey,
+              ),
+              onPressed: () {
+                debugPrint('Elavated Button Pushed');
+              },
+              child: const Text('Elevated Button'),
             ),
-            onPressed: () {
-              debugPrint('Elavated Button Pushed');
-            },
-            child: const Text('Elevated Button'),
-          ),
-          OutlinedButton(
-            onPressed: () {
-              debugPrint('Outlined Button Pushed');
-            },
-            child: const Text('Outlined Button'),
-          ),
-          TextButton(
-            onPressed: () {
-              debugPrint('Text Button Pushed');
-            },
-            child: const Text('Text Button'),
-          ),
-          GestureDetector(
-            behavior: HitTestBehavior.opaque,
-            onTap: () {
-              debugPrint('Gesture Detector On Tap');
-            },
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: const [
-                Icon(
-                  Icons.fiber_manual_record,
-                  color: Colors.red,
-                ),
-                Text('Row'),
-                Icon(
-                  Icons.fiber_manual_record,
-                  color: Colors.blue,
-                ),
-              ],
+            OutlinedButton(
+              onPressed: () {
+                debugPrint('Outlined Button Pushed');
+              },
+              child: const Text('Outlined Button'),
             ),
-          ),
-          Switch(
+            TextButton(
+              onPressed: () {
+                debugPrint('Text Button Pushed');
+              },
+              child: const Text('Text Button'),
+            ),
+            GestureDetector(
+              behavior: HitTestBehavior.opaque,
+              onTap: () {
+                debugPrint('Gesture Detector On Tap');
+              },
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: const [
+                  Icon(
+                    Icons.fiber_manual_record,
+                    color: Colors.red,
+                  ),
+                  Text('Row'),
+                  Icon(
+                    Icons.fiber_manual_record,
+                    color: Colors.blue,
+                  ),
+                ],
+              ),
+            ),
+            Switch(
               value: isSwitch,
               onChanged: (bool newBool) {
                 setState(() => isSwitch = newBool);
-              })
-        ],
+              },
+            ),
+            Checkbox(
+              value: isCheckbox,
+              onChanged: (bool? newBool) {
+                setState(() => isCheckbox = newBool);
+              },
+            ),
+            Image.network(
+                'https://plus.unsplash.com/premium_photo-1671872368093-d43b82e39760?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2003&q=80'),
+          ],
+        ),
       ),
     );
   }
