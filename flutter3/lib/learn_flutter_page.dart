@@ -35,6 +35,12 @@ class _LearFlutterPageState extends State<LearFlutterPage> {
             height: 300,
             width: 300,
           ),
+          const SizedBox(
+            height: 10,
+          ),
+          const Divider(
+            color: Colors.deepPurpleAccent,
+          ),
         ],
       ),
     );
