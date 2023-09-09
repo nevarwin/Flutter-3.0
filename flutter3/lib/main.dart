@@ -34,7 +34,9 @@ class _RootPageState extends State<RootPage> {
         title: const Text('Sample'),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          debugPrint('Button Pressed!');
+        },
         child: const Icon(
           Icons.add,
         ),
