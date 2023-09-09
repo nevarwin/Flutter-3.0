@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter3/home_page.dart';
 
@@ -53,7 +51,13 @@ class _LearFlutterPageState extends State<LearFlutterPage> {
                 style: TextStyle(color: Colors.white),
               ),
             ),
-          )
+          ),
+          ElevatedButton(
+            onPressed: () {
+              debugPrint('Elavated Button Pushed');
+            },
+            child: const Text('Elevated Button'),
+          ),
         ],
       ),
     );
