@@ -16,6 +16,14 @@ class _LearFlutterPageState extends State<LearFlutterPage> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
+        actions: [
+          IconButton(
+            onPressed: () {
+              debugPrint('Actions');
+            },
+            icon: const Icon(Icons.info_rounded),
+          ),
+        ],
         leading: IconButton(
           onPressed: () {
             Navigator.of(context).pop(
