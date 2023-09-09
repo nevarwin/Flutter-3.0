@@ -9,6 +9,7 @@ class LearFlutterPage extends StatefulWidget {
 }
 
 class _LearFlutterPageState extends State<LearFlutterPage> {
+  bool isSwitch = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,6 +54,9 @@ class _LearFlutterPageState extends State<LearFlutterPage> {
             ),
           ),
           ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: isSwitch ? Colors.amber : Colors.grey,
+            ),
             onPressed: () {
               debugPrint('Elavated Button Pushed');
             },
@@ -90,6 +94,11 @@ class _LearFlutterPageState extends State<LearFlutterPage> {
               ],
             ),
           ),
+          Switch(
+              value: isSwitch,
+              onChanged: (bool newBool) {
+                setState(() => isSwitch = newBool);
+              })
         ],
       ),
     );
