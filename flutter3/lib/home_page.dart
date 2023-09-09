@@ -5,8 +5,13 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
+    return Center(
+      child: ElevatedButton(
+        onPressed: () {
+          debugPrint('learn flutter');
+        },
+        child: const Text('Learn Flutter'),
+      ),
     );
   }
 }
