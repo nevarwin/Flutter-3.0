@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter3/home_page.dart';
 
@@ -41,6 +43,17 @@ class _LearFlutterPageState extends State<LearFlutterPage> {
           const Divider(
             color: Colors.deepPurpleAccent,
           ),
+          Container(
+            padding: const EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
+            color: Colors.blueGrey,
+            child: const Center(
+              child: Text(
+                'This is a Text Widget',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+          )
         ],
       ),
     );
