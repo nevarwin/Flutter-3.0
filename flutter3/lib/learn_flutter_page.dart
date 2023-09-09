@@ -28,6 +28,15 @@ class _LearFlutterPageState extends State<LearFlutterPage> {
         ),
         title: const Text('Learn Flutter'),
       ),
+      body: Column(
+        children: [
+          Image.asset(
+            'images/cavite logo.png',
+            height: 300,
+            width: 300,
+          ),
+        ],
+      ),
     );
   }
 }
