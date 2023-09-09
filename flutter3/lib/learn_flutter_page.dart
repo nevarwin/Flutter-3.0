@@ -70,19 +70,25 @@ class _LearFlutterPageState extends State<LearFlutterPage> {
             },
             child: const Text('Text Button'),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: const [
-              Icon(
-                Icons.fiber_manual_record,
-                color: Colors.red,
-              ),
-              Text('Row'),
-              Icon(
-                Icons.fiber_manual_record,
-                color: Colors.blue,
-              ),
-            ],
+          GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onTap: () {
+              debugPrint('Gesture Detector On Tap');
+            },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: const [
+                Icon(
+                  Icons.fiber_manual_record,
+                  color: Colors.red,
+                ),
+                Text('Row'),
+                Icon(
+                  Icons.fiber_manual_record,
+                  color: Colors.blue,
+                ),
+              ],
+            ),
           ),
         ],
       ),
