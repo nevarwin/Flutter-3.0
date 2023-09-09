@@ -33,6 +33,7 @@ class _RootPageState extends State<RootPage> {
       appBar: AppBar(
         title: const Text('Sample'),
       ),
+      floatingActionButton: FloatingActionButton(onPressed: () {}),
     );
   }
 }
