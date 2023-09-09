@@ -64,6 +64,12 @@ class _LearFlutterPageState extends State<LearFlutterPage> {
             },
             child: const Text('Outlined Button'),
           ),
+          TextButton(
+            onPressed: () {
+              debugPrint('Text Button Pushed');
+            },
+            child: const Text('Text Button'),
+          ),
         ],
       ),
     );
